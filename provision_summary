@@ -1,0 +1,38 @@
+
+==================== PROVISIONING SUMMARY ====================
+Resource group          : rg-lab-revise
+Region                  : eastus
+Subscription ID         : 89d4fdd2-c376-4dc8-a461-fd467b017bcc
+Tenant ID               : cb2dd600-8c8b-431c-9523-72b3a86ae630
+Unique suffix           : 69803c84
+
+Tools/SonarQube VM      : vm-revise-tools-69803c84
+Tools public IP          : 20.172.147.28
+Tools private IP         : 10.20.1.4
+Deployment target VM     : vm-revise-app-69803c84
+App public IP (HTTP)     : 13.72.79.38
+App private IP           : 10.20.1.5
+AKS cluster              : aks-revise-69803c84
+AKS API allowed ranges   : 0.0.0.0/0,20.172.147.28/32
+Key Vault                : kv-revise-69803c84
+Workload Storage Account : stlabdata69803c84
+Terraform State Account  : stlabtfstate69803c84
+Terraform state container: tfstate
+Workload Blob container  : lab-demo
+User-assigned identity   : id-aks-workload-69803c84
+Identity client ID       : 3c211ac1-2011-4a73-90ff-5848ae608b93
+OIDC issuer              : https://eastus.oic.prod-aks.azure.com/cb2dd600-8c8b-431c-9523-72b3a86ae630/d3ff672f-590f-4511-ae54-f38c23df1444/
+Deploy private key       : /home/aayushpokharel/.ssh/revise-lab-deploy-69803c84
+Environment file         : .revise-lab.env
+
+Next steps:
+1. Configure Docker + SonarQube on the tools VM, then open SonarQube with an SSH tunnel.
+2. Copy the deploy private key to the tools VM and register that VM as a GitHub self-hosted runner.
+3. Install Docker on the deployment target VM.
+4. Complete the GitHub OIDC app/federated credential for the Terraform repo (guide provided separately).
+5. Wait a few minutes for Azure role assignments to propagate before testing Key Vault/Blob access.
+
+COST / CLEANUP:
+These VMs, managed disks, public IPs, AKS worker node, and storage incur charges while allocated.
+Use the cleanup instructions in the companion guide when the lab is finished.
+==============================================================
